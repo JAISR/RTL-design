@@ -14,10 +14,8 @@ end full_subtractor;
 
 ---architecture description------
 architecture behavioral of full_subtractor is
-signal d_sig : std_logic;
 begin
 
-d_sig <= a xor b xor bin;
-D     <= d_sig;
-Bout <= ((not(a) and b)) or ((not(d_sig) and bin));
+D    <= a xor b xor bin;
+Bout <= ((not(a) and b)) or ((not(a xor b) and bin));
 end behavioral;
